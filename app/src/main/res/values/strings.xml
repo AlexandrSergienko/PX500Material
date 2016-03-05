@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PicX500</string>
+    <string name="action_settings">Settings</string>
+    <string name="error_during_load_page_of_photos">Error occured during loading photos</string>
+
+    <string name="title_activity_photo_view">PhotoViewActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="share_text" formatted="false">See the photo %s from %s by %s %s</string>
+    <string name="error_network_connection">Check internet connection</string>
+    <string name="check_internet">Go Settings</string>
+</resources>
