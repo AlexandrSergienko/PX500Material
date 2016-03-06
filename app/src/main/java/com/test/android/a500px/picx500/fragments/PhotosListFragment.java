@@ -1,6 +1,8 @@
 package com.test.android.a500px.picx500.fragments;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -8,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,7 +106,14 @@ public class PhotosListFragment extends Fragment implements AdapterView.OnItemCl
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
         intent.putExtra(PhotoViewActivity.EXTRAS_PHOTO_OBJECT, photoList.get(i));
-        startActivity(intent);
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // only for gingerbread and newer versions
+            ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(
+                getActivity(), new Pair<View, String>(view.findViewById(R.id.photo), "photoView"));
+            startActivity(intent, transitionActivityOptions.toBundle());
+        }else{
+            startActivity(intent);
+        }
 
     }
 

@@ -11,7 +11,8 @@
     <com.test.android.a500px.picx500.views.ScaleImageView
         android:id="@+id/photo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:transitionName="photoView"/>
 
 
 
@@ -26,7 +27,8 @@
         android:layout_marginBottom="@dimen/fab_margin"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
-        android:src="@android:drawable/ic_menu_share" />
+        android:src="@android:drawable/ic_menu_share"
+        />
 
     <TextView
         android:id="@+id/camera"
